@@ -12,6 +12,7 @@ public class Build : MonoBehaviour
     public Material onHoverMat;
     public Material onOccupiedMat;
 
+    GridElement g;
     Material normMat;
     RaycastHit mouseHit;
 
@@ -28,8 +29,8 @@ public class Build : MonoBehaviour
         // If our mouse ray hits something
         if (Physics.Raycast(ray, out mouseHit))
         {
-            // Checks if the hovered element has a 'GridElement' component.
-            GridElement g = mouseHit.transform.GetComponent<GridElement>();
+            // Tries to get from it a 'GridElement' component.
+            g = mouseHit.transform.GetComponent<GridElement>();
 
             // A) If it doesn't...
             if (!g)
@@ -41,12 +42,6 @@ public class Build : MonoBehaviour
                     curHoveredGridElement.GetComponent<MeshRenderer>().material = normMat;
                     return;
                 }                
-            }
-
-            // Defines the mouse clicked 'selectedGridElement' with the 'g' value
-            if (Input.GetMouseButtonDown(0))
-            {
-                curSelectedGridElement = g;
             }
 
             // Checks if the 'g' is one we had already before...
@@ -75,6 +70,12 @@ public class Build : MonoBehaviour
 
             // ...and sets the current 'g' element as hovered
             curHoveredGridElement = g;
+
+            // Defines the mouse clicked 'selectedGridElement' with the 'g' value
+            if (Input.GetMouseButtonDown(0))
+            {
+                curSelectedGridElement = g;
+            }
         }
         else
         {
