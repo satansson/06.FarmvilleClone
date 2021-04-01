@@ -7,6 +7,7 @@ public class Build : MonoBehaviour
     public GridElement curSelectedGridElement;
     public GridElement curHoveredGridElement;
     public GridElement[] grid;
+    public Buildings buildings;
 
     [Header("Colors")]
     public Material onHoverMat;
@@ -15,6 +16,9 @@ public class Build : MonoBehaviour
     GridElement g;
     Material normMat;
     RaycastHit mouseHit;
+    GameObject curCreatedBuildable;
+
+    bool buildInProgress;
 
     void Awake()
     {
@@ -84,6 +88,58 @@ public class Build : MonoBehaviour
             {
                 curHoveredGridElement.GetComponent<MeshRenderer>().material = normMat;
             }
+        }
+
+        MoveBuilding();
+    }
+
+    public void OnBtnCreateBuilding(int id)
+    {
+        if (buildInProgress)
+        {
+            return;
+        }
+
+        GameObject g = null;
+
+        foreach (GameObject gO in buildings.buildables)
+        {
+            Building b = gO.GetComponent<Building>();
+            if (b.info.id == id)
+            {
+                g = b.gameObject;
+            }
+        }
+
+        curCreatedBuildable = Instantiate(g);
+        curCreatedBuildable.transform.rotation = Quaternion.Euler(0, -225, 0);
+        buildInProgress = true;
+    }
+
+    public void MoveBuilding()
+    {
+        if (!curCreatedBuildable)
+        {
+            return;
+        }
+
+        curCreatedBuildable.gameObject.layer = 2;
+
+        if (curHoveredGridElement)
+        {
+            curCreatedBuildable.transform.position = curHoveredGridElement.transform.position;
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Destroy(curCreatedBuildable);
+            curCreatedBuildable = null;
+            buildInProgress = false;
+        }
+
+        if (Input.GetMouseButton(2))
+        {
+            curCreatedBuildable.transform.Rotate(transform.up * 5);
         }
     }
 }

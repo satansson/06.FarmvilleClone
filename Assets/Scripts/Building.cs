@@ -5,13 +5,15 @@ using UnityEngine;
 // It's better to each class have its own file
 // but here we placed three classes into one file to easier manage them.
 
+[System.Serializable] // Shows this class in the Inspector
 public class PriceTag
 {
     public float price_wood;
-    public float price_srone;
+    public float price_stones;
     public float price_food;
 }
 
+[System.Serializable] // Shows this class in the Inspector
 public class BuildingInfo
 {
     public int id;
