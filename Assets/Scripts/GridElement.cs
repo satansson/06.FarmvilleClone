@@ -5,7 +5,7 @@ using UnityEngine;
 public class GridElement : MonoBehaviour
 {
     public int gridID;
-    public bool isOccupies;
+    public bool occupied;
 
     //TODO: Which building is connected
 
