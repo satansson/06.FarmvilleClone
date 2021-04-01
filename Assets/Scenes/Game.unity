@@ -1133,7 +1133,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 209107574}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 875124751}
+        m_TargetAssemblyTypeName: Build, Assembly-CSharp
+        m_MethodName: OnBtnCreateBuilding
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &209107574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1849,7 +1861,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 320303855}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 875124751}
+        m_TargetAssemblyTypeName: Build, Assembly-CSharp
+        m_MethodName: OnBtnCreateBuilding
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &320303855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2401,6 +2425,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
       propertyPath: m_Name
       value: Tree_01 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
       propertyPath: m_RootOrder
@@ -5442,6 +5474,7 @@ GameObject:
   - component: {fileID: 875124750}
   - component: {fileID: 875124749}
   - component: {fileID: 875124751}
+  - component: {fileID: 875124752}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5530,8 +5563,27 @@ MonoBehaviour:
   - {fileID: 1293829782}
   - {fileID: 563618954}
   - {fileID: 1859266450}
+  buildings: {fileID: 875124752}
   onHoverMat: {fileID: 2100000, guid: 05e8856d58884497892859e7d302ae61, type: 2}
   onOccupiedMat: {fileID: 2100000, guid: e6e1bcd6f58b54e50a038b296e40f73a, type: 2}
+--- !u!114 &875124752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875124748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0d40bb39b2748b4bcf525e6a309bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildables:
+  - {fileID: 2640342520736099464, guid: 8830e7453f5ca4c1ab4fd5d7cef759e6, type: 3}
+  - {fileID: 5783520389724338895, guid: 07ed20b5caf23468c81ce8256618910e, type: 3}
+  - {fileID: 2764103513353746119, guid: e2ff7fda235ae4dbfb4b36bd1517e38b, type: 3}
+  - {fileID: 6404374403442228052, guid: b652012e0c454402b9d4c0d0b004924e, type: 3}
+  built: []
 --- !u!1001 &881573334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5549,7 +5601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5000001
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
       propertyPath: m_LocalScale.y
@@ -5557,11 +5609,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5000001
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3
+      value: -0.49
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5569,7 +5621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.57
+      value: 3.61
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5781,7 +5833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fb6564d75cd5f4977ad3f8cfec22fad3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fb6564d75cd5f4977ad3f8cfec22fad3, type: 3}
       propertyPath: m_LocalScale.y
@@ -5789,7 +5841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fb6564d75cd5f4977ad3f8cfec22fad3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fb6564d75cd5f4977ad3f8cfec22fad3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8171,7 +8223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.89
+      value: -3.81
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3d1758f79585e4df4858258590e6b434, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9306,7 +9358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fb6564d75cd5f4977ad3f8cfec22fad3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.46
+      value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fb6564d75cd5f4977ad3f8cfec22fad3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9314,7 +9366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fb6564d75cd5f4977ad3f8cfec22fad3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.1
+      value: -4.04
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fb6564d75cd5f4977ad3f8cfec22fad3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11705,7 +11757,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1663928521}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 875124751}
+        m_TargetAssemblyTypeName: Build, Assembly-CSharp
+        m_MethodName: OnBtnCreateBuilding
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1663928521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12186,7 +12250,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1712401541}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 875124751}
+        m_TargetAssemblyTypeName: Build, Assembly-CSharp
+        m_MethodName: OnBtnCreateBuilding
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1712401541
 MonoBehaviour:
   m_ObjectHideFlags: 0
