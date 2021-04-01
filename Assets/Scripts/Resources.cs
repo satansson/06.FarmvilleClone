@@ -6,7 +6,7 @@ using TMPro;
 public class Resources : MonoBehaviour
 {
     public float wood;
-    public float stone;
+    public float stones;
     public float food;
 
     [Header("UI Reference")]
@@ -15,6 +15,6 @@ public class Resources : MonoBehaviour
     void FixedUpdate()
     {
         resourcesText.text = "Wood: " + wood.ToString("F0") + " | Stones: "
-            + stone.ToString("F0") + " | Food: " + food.ToString("F0");
+            + stones.ToString("F0") + " | Food: " + food.ToString("F0");
     }
 }
