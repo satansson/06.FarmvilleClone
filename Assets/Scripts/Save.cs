@@ -54,7 +54,7 @@ public class Save : MonoBehaviour
 
         foreach (GameObject gO in buildings.built)
         {
-            BuildingInfo bI = gO.GetComponent<Building>().buildingInfo;
+            BuildingInfo bI = gO.GetComponent<Building>().info;
             savedProfile.savedBiuldings.Add(bI);
         }
 

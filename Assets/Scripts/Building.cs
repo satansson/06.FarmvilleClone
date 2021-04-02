@@ -24,7 +24,7 @@ public class BuildingInfo
 
 public class Building : MonoBehaviour
 {
-    public BuildingInfo buildingInfo;
+    public BuildingInfo info;
     public PriceTag price;
 
     public string objName;
@@ -45,26 +45,26 @@ public class Building : MonoBehaviour
         if (!isPlaced)
             return;
 
-        switch (buildingInfo.id)
+        switch (info.id)
         {
             // Lumberjack
             case 1:
-                resources.wood += (baseResourceGain * buildingInfo.level) * Time.deltaTime * gainRate;
+                resources.wood += (baseResourceGain * info.level) * Time.deltaTime * gainRate;
                 return;
             // Stone Mason
             case 2:
-                resources.stones += (baseResourceGain * buildingInfo.level) * Time.deltaTime * gainRate;
+                resources.stones += (baseResourceGain * info.level) * Time.deltaTime * gainRate;
                 return;
             // Wind Mill
             case 3:
-                resources.food += (baseResourceGain * buildingInfo.level) * Time.deltaTime * gainRate;
+                resources.food += (baseResourceGain * info.level) * Time.deltaTime * gainRate;
                 return;
         }
     }
 
     public void UpgradeBuilding()
     {
-        buildingInfo.level++;
+        info.level++;
 
         resources.wood -= price.price_wood;
         resources.stones -= price.price_stones;
