@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class GridElement : MonoBehaviour
 {
-    public int gridID;
+    public int gridId;
     public bool occupied;
-
-    //TODO: Which building is connected
+    public Building connectedBuilding;
 
     private void Awake()
     {
-        // show connected building
+        Build b = FindObjectOfType<Build>();
+
+        for (int i = 0; i < b.grid.Length; i++)
+        {
+            if (b.grid[i].transform == transform)
+            {
+                gridId = i;
+                break;
+            }
+        }
     }
 }

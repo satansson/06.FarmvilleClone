@@ -28,7 +28,7 @@ public class Building : MonoBehaviour
     public PriceTag price;
 
     public string objName;
-    public bool isPositioned;
+    public bool isPlaced;
     public int baseResourceGain = 1;
 
     Resources resources;
@@ -41,7 +41,7 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isPositioned)
+        if (!isPlaced)
             return;
 
         switch (info.id)
