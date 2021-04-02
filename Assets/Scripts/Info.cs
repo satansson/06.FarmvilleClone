@@ -9,7 +9,7 @@ public class Info : MonoBehaviour
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI upgradeText;
-    [SerializeField] TextMeshProUGUI tearDownText;
+    [SerializeField] TextMeshProUGUI destroyText;
     [SerializeField] Button upgradeBtn;
     [SerializeField] Button destroyBtn;
 
@@ -31,7 +31,7 @@ public class Info : MonoBehaviour
         orange = upgradeText.color;
         darkOrange = new Color(orange.r, orange.g, orange.b, orange.a * .5f);
 
-        red = tearDownText.color;
+        red = destroyText.color;
         darkRed = new Color(red.r, red.g, red.b, red.a * .5f);
     }
 
@@ -42,7 +42,7 @@ public class Info : MonoBehaviour
         {
             selectedBuilding = build.curSelectedGridElement.connectedBuilding;
             nameText.text = build.curSelectedGridElement.connectedBuilding.objName;
-            levelText.text = "Level: " + selectedBuilding.info.level;
+            levelText.text = "Level: " + selectedBuilding.buildingInfo.level;
         }
         else
         {
@@ -106,9 +106,9 @@ public class Info : MonoBehaviour
     // Changes text color depending on corresponding button state
     void UpdateTearDownTextColor()
     {
-        if (destroyBtn.interactable && tearDownText.color != red)
-            tearDownText.color = red;
-        else if (!destroyBtn.interactable && tearDownText.color != darkRed)
-            tearDownText.color = darkRed;
+        if (destroyBtn.interactable && destroyText.color != red)
+            destroyText.color = red;
+        else if (!destroyBtn.interactable && destroyText.color != darkRed)
+            destroyText.color = darkRed;
     }
 }

@@ -5533,6 +5533,7 @@ GameObject:
   - component: {fileID: 875124749}
   - component: {fileID: 875124751}
   - component: {fileID: 875124752}
+  - component: {fileID: 875124753}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5642,6 +5643,18 @@ MonoBehaviour:
   - {fileID: 2764103513353746119, guid: e2ff7fda235ae4dbfb4b36bd1517e38b, type: 3}
   - {fileID: 6404374403442228052, guid: b652012e0c454402b9d4c0d0b004924e, type: 3}
   built: []
+--- !u!114 &875124753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875124748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d13623f2cea4df8a3f43b51543ed10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &881573334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8037,7 +8050,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: -5
+  m_characterSpacing: -6
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -8826,7 +8839,7 @@ MonoBehaviour:
   nameText: {fileID: 708712619}
   levelText: {fileID: 1610341361}
   upgradeText: {fileID: 1172472360}
-  tearDownText: {fileID: 1654383318}
+  destroyText: {fileID: 1654383318}
   upgradeBtn: {fileID: 296816978}
   destroyBtn: {fileID: 1320283012}
 --- !u!1 &1306833692
@@ -9108,7 +9121,7 @@ GameObject:
   - component: {fileID: 1320283013}
   - component: {fileID: 1320283012}
   m_Layer: 5
-  m_Name: TearDownButton
+  m_Name: DestroyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11834,7 +11847,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tear Down
+  m_text: Destroy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12952,7 +12965,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: -5
+  m_characterSpacing: -6
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -13853,7 +13866,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: -5
+  m_characterSpacing: -6
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -14661,7 +14674,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: -5
+  m_characterSpacing: -6
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
