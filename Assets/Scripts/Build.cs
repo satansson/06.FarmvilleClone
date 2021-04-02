@@ -106,7 +106,7 @@ public class Build : MonoBehaviour
         foreach (GameObject gO in buildings.buildables)
         {
             Building b = gO.GetComponent<Building>();
-            if (b.info.id == id)
+            if (b.buildingInfo.id == id)
             {
                 g = b.gameObject;
             }
@@ -163,8 +163,8 @@ public class Build : MonoBehaviour
             curHoveredGridElement.connectedBuilding = b;
             b.isPlaced = true;
 
-            b.info.connectedGridId = curHoveredGridElement.gridId;
-            b.info.yRotation = b.transform.localEulerAngles.y;
+            b.buildingInfo.connectedGridId = curHoveredGridElement.gridId;
+            b.buildingInfo.yRotation = b.transform.localEulerAngles.y;
 
             b.UpgradeBuilding();
 

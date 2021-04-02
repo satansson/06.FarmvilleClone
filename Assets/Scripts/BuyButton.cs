@@ -27,7 +27,7 @@ public class BuyButton : MonoBehaviour
         foreach (GameObject gO in buildings.buildables)
         {
             Building b = gO.GetComponent<Building>();
-            if (b.info.id == connectedBuildingId)
+            if (b.buildingInfo.id == connectedBuildingId)
             {
                 connectedBuilding = b;
                 break;
