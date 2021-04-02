@@ -42,7 +42,7 @@ public class Info : MonoBehaviour
         {
             selectedBuilding = build.curSelectedGridElement.connectedBuilding;
             nameText.text = build.curSelectedGridElement.connectedBuilding.objName;
-            levelText.text = "Level: " + selectedBuilding.buildingInfo.level;
+            levelText.text = "Level: " + selectedBuilding.info.level;
         }
         else
         {
