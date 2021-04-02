@@ -166,6 +166,8 @@ public class Build : MonoBehaviour
             b.info.connectedGridId = curHoveredGridElement.gridId;
             b.info.yRotation = b.transform.localEulerAngles.y;
 
+            b.UpgradeBuilding();
+
             curCreatedBuildable = null;
             buildInProgress = false;
         }

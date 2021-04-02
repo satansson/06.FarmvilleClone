@@ -29,7 +29,8 @@ public class Building : MonoBehaviour
 
     public string objName;
     public bool isPlaced;
-    public int baseResourceGain = 1;
+    [SerializeField] int baseResourceGain = 1;
+    [SerializeField] float gainRate;
 
     Resources resources;
 
@@ -48,16 +49,25 @@ public class Building : MonoBehaviour
         {
             // Lumberjack
             case 1:
-                resources.wood += (baseResourceGain * info.level) * Time.deltaTime;
+                resources.wood += (baseResourceGain * info.level) * Time.deltaTime * gainRate;
                 return;
             // Stone Mason
             case 2:
-                resources.stones += (baseResourceGain * info.level) * Time.deltaTime;
+                resources.stones += (baseResourceGain * info.level) * Time.deltaTime * gainRate;
                 return;
             // Wind Mill
             case 3:
-                resources.food += (baseResourceGain * info.level) * Time.deltaTime;
+                resources.food += (baseResourceGain * info.level) * Time.deltaTime * gainRate;
                 return;
         }
+    }
+
+    public void UpgradeBuilding()
+    {
+        info.level++;
+
+        resources.wood -= price.price_wood;
+        resources.stones -= price.price_stones;
+        resources.food -= price.price_food;
     }
 }

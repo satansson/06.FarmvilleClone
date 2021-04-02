@@ -480,9 +480,10 @@ MonoBehaviour:
     level: 0
     yRotation: 0
   price:
-    price_wood: 20
-    price_srone: 0
-    price_food: 0
-  objName: 
-  isPositioned: 0
+    price_wood: 80
+    price_stones: 20
+    price_food: 15
+  objName: Stone Mason
+  isPlaced: 0
   baseResourceGain: 1
+  gainRate: 10

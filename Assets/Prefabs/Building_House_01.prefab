@@ -121,9 +121,10 @@ MonoBehaviour:
     level: 0
     yRotation: 0
   price:
-    price_wood: 30
-    price_stones: 10
-    price_food: 10
-  objName: 
-  isPositioned: 0
+    price_wood: 200
+    price_stones: 80
+    price_food: 30
+  objName: House
+  isPlaced: 0
   baseResourceGain: 1
+  gainRate: 10
