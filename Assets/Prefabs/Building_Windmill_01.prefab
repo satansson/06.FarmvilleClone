@@ -125,6 +125,6 @@ MonoBehaviour:
     price_wood: 30
     price_stones: 30
     price_food: 0
-  objName: 
-  isPositioned: 0
+  objName: Windmill
+  isPlaced: 0
   baseResourceGain: 1

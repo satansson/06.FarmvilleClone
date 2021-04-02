@@ -60,4 +60,13 @@ public class Building : MonoBehaviour
                 return;
         }
     }
+
+    public void UpgradeBuilding()
+    {
+        info.level++;
+
+        resources.wood -= price.price_wood;
+        resources.stones -= price.price_stones;
+        resources.food -= price.price_food;
+    }
 }
