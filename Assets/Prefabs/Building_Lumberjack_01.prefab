@@ -237,12 +237,13 @@ MonoBehaviour:
     level: 0
     yRotation: 0
   price:
-    price_wood: 20
-    price_stones: 0
-    price_food: 0
+    price_wood: 50
+    price_stones: 20
+    price_food: 10
   objName: Lumberjack
   isPlaced: 0
   baseResourceGain: 1
+  gainRate: 10
 --- !u!1 &2640342520736099466
 GameObject:
   m_ObjectHideFlags: 0

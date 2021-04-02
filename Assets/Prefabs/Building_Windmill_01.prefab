@@ -122,9 +122,10 @@ MonoBehaviour:
     level: 0
     yRotation: 0
   price:
-    price_wood: 30
-    price_stones: 30
-    price_food: 0
+    price_wood: 120
+    price_stones: 50
+    price_food: 25
   objName: Windmill
   isPlaced: 0
   baseResourceGain: 1
+  gainRate: 10
