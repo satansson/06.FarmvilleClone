@@ -91,6 +91,7 @@ public class Build : MonoBehaviour
         }
 
         MoveBuilding();
+        PlaceBuilding();
     }
 
     public void OnBtnCreateBuilding(int id)
@@ -116,6 +117,7 @@ public class Build : MonoBehaviour
         buildInProgress = true;
     }
 
+    // The chosen building follows the mouse
     public void MoveBuilding()
     {
         if (!curCreatedBuildable)
@@ -140,6 +142,32 @@ public class Build : MonoBehaviour
         if (Input.GetMouseButton(2))
         {
             curCreatedBuildable.transform.Rotate(transform.up * 5);
+        }
+    }
+
+    // The chosen building is placed by mouse left click
+    public void PlaceBuilding()
+    {
+        if (!curCreatedBuildable || curHoveredGridElement.occupied)
+        {
+            return;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            buildings.built.Add(curCreatedBuildable);
+            curHoveredGridElement.occupied = true;
+
+            Building b = curCreatedBuildable.GetComponent<Building>();
+
+            curHoveredGridElement.connectedBuilding = b;
+            b.isPlaced = true;
+
+            b.info.connectedGridId = curHoveredGridElement.gridId;
+            b.info.yRotation = b.transform.localEulerAngles.y;
+
+            curCreatedBuildable = null;
+            buildInProgress = false;
         }
     }
 }
