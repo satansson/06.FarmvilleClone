@@ -28,8 +28,6 @@ public class Save : MonoBehaviour
         resources = FindObjectOfType<Resources>();
         buildings = FindObjectOfType<Buildings>();
         build = FindObjectOfType<Build>();
-
-        // TODO: Load savedProfile.
     }
 
     void Update()
@@ -37,7 +35,11 @@ public class Save : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             SaveGame();
-            print("Game was saved.");
+            print("Game has been saved.");
+        }else if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadGame();
+            print("Game has been loaded.");
         }
     }
 
@@ -68,5 +70,34 @@ public class Save : MonoBehaviour
         binaryFormatter.Serialize(fileStream, savedProfile);
 
         fileStream.Close();
+    }
+
+    void LoadGame()
+    {
+        string pathToLoad = Application.dataPath + "/save.dat";
+
+        if (!File.Exists(pathToLoad))
+        {
+            Debug.Log("No saved files found.");
+            return;
+        }
+
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        FileStream fileStream = File.Open(pathToLoad, FileMode.Open);
+        SavedProfile loadedProfile = binaryFormatter.Deserialize(fileStream) as SavedProfile;
+        fileStream.Close();
+
+        resources.wood = loadedProfile.savedWood;
+        resources.stones = loadedProfile.savedStones;
+        resources.food = loadedProfile.savedFood;
+
+        for (int i = 0; i < loadedProfile.savedBiuldings.Count; i++)
+        {
+            BuildingInfo buildingFromSave = loadedProfile.savedBiuldings[i];
+
+            build.RebuildBuilding(buildingFromSave.id, buildingFromSave.connectedGridId,
+                buildingFromSave.level, buildingFromSave.yRotation);
+            print("Building with ID of " + buildingFromSave.id + " was loaded.");
+        }
     }
 }

@@ -18,7 +18,7 @@ public class BuildingInfo
 {
     public int id;
     public int connectedGridId;
-    public float level = 0;
+    public int level = 0;
     public float yRotation = 0;
 }
 
