@@ -172,4 +172,38 @@ public class Build : MonoBehaviour
             buildInProgress = false;
         }
     }
+
+    public void RebuildBuilding(int buildingId, int gridId, int buildingLevel, float yRotation)
+    {
+        GameObject g = null;
+
+        // Choses the correct building prefab by its ID from buildables list
+        foreach (GameObject gO in buildings.buildables)
+        {
+            Building b = gO.GetComponent<Building>();
+
+            if (b.info.id == buildingId)
+            {
+                g = b.gameObject;
+            }
+        }
+
+        // Creates it in the scene and sets its parameters from the loaded file
+        GameObject building = Instantiate(g);
+        buildings.built.Add(building);
+
+        Building loadedBuilding = building.GetComponent<Building>();
+        loadedBuilding.info.id = buildingId;
+        loadedBuilding.info.connectedGridId = gridId;
+        loadedBuilding.info.level = buildingLevel;
+        loadedBuilding.isPlaced = true;
+
+        GridElement gridElement = grid[gridId].GetComponent<GridElement>();
+        loadedBuilding.transform.position = gridElement.transform.position;
+        loadedBuilding.transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        loadedBuilding.info.yRotation = yRotation;
+
+        gridElement.occupied = true;
+        gridElement.connectedBuilding = loadedBuilding;
+    }
 }
